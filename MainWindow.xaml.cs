@@ -22,7 +22,6 @@ namespace Jellyfin_xml_playlist_randomizer
 
         public XDocument Randomize()
         {
-            //rather keep a static random if u can
             var rand = new Random();
 
             var xdoc = XDocument.Parse(XML);
