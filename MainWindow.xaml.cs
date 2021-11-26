@@ -22,12 +22,12 @@ namespace Jellyfin_xml_playlist_randomizer
 
         public XDocument Randomize()
         {
-            var rand = new Random();
+            Random rand = new Random();
 
-            var xdoc = XDocument.Parse(XML);
-            var ele = xdoc.Root.Element("PlaylistItems");
+            XDocument xdoc = XDocument.Parse(XML);
+            XElement ele = xdoc.Root.Element("PlaylistItems");
 
-            var shuffle = new XElement("PlaylistItems", ele.Elements().OrderBy(x => rand.Next()));
+            XElement shuffle = new XElement("PlaylistItems", ele.Elements().OrderBy(x => rand.Next()));
 
             ele.ReplaceWith(shuffle);
             return xdoc;
@@ -39,11 +39,6 @@ namespace Jellyfin_xml_playlist_randomizer
             if (openFileDialog.ShowDialog() == true)
             {
                 XML = File.ReadAllText(openFileDialog.FileName);
-                
-                var memory = new MemoryStream();
-                Randomize().Save(memory);
-                string xmlText = Encoding.UTF8.GetString(memory.ToArray());
-                Debug.WriteLine(xmlText);
                 txtEditor.Text = Randomize().ToString();
             }
         }
