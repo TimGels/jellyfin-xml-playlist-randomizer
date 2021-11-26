@@ -1,0 +1,16 @@
+﻿<Window x:Class="Jellyfin_xml_playlist_randomizer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Jellyfin_xml_playlist_randomizer"
+        mc:Ignorable="d"
+        Title="Jellyfin XML playlist randomizer" Height="450" Width="800">
+    <Grid>
+        <DockPanel>
+            <Button Click="Button_Click" Background="Aqua" Height="45" Width="73" Content="Select file">
+            </Button>
+            <TextBox Name="txtEditor" />
+        </DockPanel>
+    </Grid>
+</Window>
